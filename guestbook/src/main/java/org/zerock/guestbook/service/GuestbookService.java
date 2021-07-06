@@ -9,6 +9,13 @@ public interface GuestbookService {
 
     Long register(GuestbookDTO dto);
 
+    PageResultDTO<GuestbookDTO, Guestbook> getList(PageRequestDTO requestDTO);
+
+    GuestbookDTO read(Long id);
+
+    void remove(Long id);
+
+    void modify(GuestbookDTO dto);
 
     default Guestbook dtoToEntity(GuestbookDTO dto) {
         Guestbook entity = Guestbook.builder()
@@ -20,7 +27,6 @@ public interface GuestbookService {
         return entity;
     }
 
-    PageResultDTO<GuestbookDTO, Guestbook> getList(PageRequestDTO requestDTO);
 
     default GuestbookDTO entityToDto(Guestbook entity) {
 
@@ -36,4 +42,6 @@ public interface GuestbookService {
         return dto;
 
     }
+
+
 }
