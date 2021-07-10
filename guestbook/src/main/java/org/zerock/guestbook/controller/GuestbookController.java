@@ -24,7 +24,7 @@ public class GuestbookController {
 
     @GetMapping("/")
     public String index() {
-
+        log.info(">>> / mapping");
         return "redirect:/guestbook/list";
     }
 
