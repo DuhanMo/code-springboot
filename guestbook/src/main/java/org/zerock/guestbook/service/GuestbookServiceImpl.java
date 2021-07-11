@@ -70,6 +70,7 @@ public class GuestbookServiceImpl implements GuestbookService {
         entity.changeContent(dto.getContent());
 
         repository.save(entity);
+        log.info("serviceImple 변경 완료");
 
     }
 

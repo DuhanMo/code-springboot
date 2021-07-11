@@ -8,6 +8,8 @@
         <h1 class="mt-4">GuestBook Modify Page</h1>
 
         <form action="/guestbook/modify" method="post">
+<!--            페이지 번호 -->
+            <input type="hidden" name="page" th:value="${requestDTO.page}">
             <div class="form-group">
                 <label>Id</label>
                 <input type="text" class="form-control" name="id" th:value="${dto.id}" readonly>
@@ -56,6 +58,16 @@
             .attr("method", "post");
 
         actionForm.submit();
+    });
 
+    $(".modifyBtn").click(function () {
+
+        if (!confirm("수정하시겠습니까??")) {
+            return ;
+        }
+        actionForm
+            .attr("action", "/guestbook/modify")
+            .attr("method","post")
+            .submit();
     });
 </script>

@@ -44,6 +44,15 @@
     <a th:href="@{/guestbook/list(page=${requestDTO.page})}">
       <button type="button" class="btn btn-info">List</button>
     </a>
+    <script th:inline="javascript">
+
+      var msg = [[${msg}]];
+      console.log(msg);
+
+      if (msg) {
+        $(".modal").modal();
+      }
+    </script>
   </th:block>
 
 </th:block>
