@@ -86,8 +86,9 @@ public class GuestbookController {
         redirectAttributes.addFlashAttribute("msg", "세션속 msg");
 
 
-// commit test
         return "redirect:/guestbook/read";
 
+
+//        dev 브랜치에서 코드 추가
     }
 }
